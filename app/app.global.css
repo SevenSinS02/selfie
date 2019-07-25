@@ -58,6 +58,7 @@ a:hover {
 
 .alert-enter {
   opacity: 0;
+
   /* -webkit-transform: scale(0.9);
   transform: scale(0.9); */
 }

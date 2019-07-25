@@ -1,7 +1,6 @@
 .container {
   position: relative;
   height: calc(100vh - 2rem);
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
