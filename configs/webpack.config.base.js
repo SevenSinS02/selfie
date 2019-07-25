@@ -34,7 +34,11 @@ export default {
    * Determine the array of extensions that should be used to resolve modules.
    */
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json'],
+    alias: {
+      videojs: 'video.js',
+      WaveSurfer: 'wavesurfer.js'
+    }
   },
 
   plugins: [
@@ -42,6 +46,11 @@ export default {
       NODE_ENV: 'production'
     }),
 
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    new webpack.ProvidePlugin({
+      videojs: 'video.js/dist/video.min.js',
+      RecordRTC: 'recordrtc',
+      MediaStreamRecorder: ['recordrtc', 'MediaStreamRecorder']
+    })
   ]
 };
